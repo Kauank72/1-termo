@@ -7,12 +7,12 @@ placa = input("digite a placa do carro: ")
 
 print(f"carro cadastrado com sucesso")
 
-metodo = input("Escolha o seu medoto de entradas ticket, Dag ou interfone")
+metodo = input("Escolha o seu medoto de entradas ticket, tag ou interfone:")
 if metodo == "tichet":
     print("metodo de entrada com sucesso")
 
-elif metodo == "Dag":
+elif metodo == "tag":
     print("O valor sera discundado na fatura da Dag")
 
 elif metodo == "interfone":
-    print("'")
+    print()
