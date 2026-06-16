@@ -60,6 +60,4 @@ elif opcao == 3:
 else:
     print("Opção inválida")
 
-
-print("--------------------Relatorio---------------------------")
-print("")
+print("Obrigado por utilizar nosso serviço!")
