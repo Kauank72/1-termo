@@ -1,38 +1,37 @@
+# 1. Utilizar tomada de decisão para elaboração do algoritmo
+# 2. Utilizar estruturas condicionais para executar instruções com base em uma
+# condição
+# 3. Criar estruturas de repetição para executar um conjunto de instruções várias
+# vezes
+# 4. Aplicar operadores lógicos para avaliar e combinar condições booleanas
+# 5. Utilizar lógica de programação para a resolução de problemas
+
 import tkinter as tk
 from tkinter import messagebox
 
 janela = tk.Tk()
-janela.title("biblioteca")
+janela.title("Biblioteca")
 janela.geometry("400x200")
 
-def janela_bemvindo():
-    Aluno = Aluno_usuario.get()
-    biblioteca = biblioteca_usuario.get()
-
-
-    if Aluno == "" and biblioteca == "":
-        messagebox.showwarning("Aviso", "Digite seu nome e o nome do livro")
+def cadastrar_livro():              
+    titulo = entry_titulo.get()
+    autor = entry_autor.get()
+    
+    if titulo and autor:
+        messagebox.showinfo("Sucesso", f"Livro '{titulo}' de {autor} cadastrado com sucesso!")
+        entry_titulo.delete(0, tk.END)
+        entry_autor.delete(0, tk.END)
     else:
-        messagebox.showinfo("Bem-Vindo", f"Olá usuário, {Aluno}, seu livro escolhido foi: {biblioteca} - Seja bem-vindo a bibliotecaria")
-
-
-
-
-lbl_mensagem = tk.Label(janela, text="Digite seu nome")
-lbl_mensagem.grid(row=0, column=0, pady=10, padx=10)
-lbl_idade = tk.Label(janela, text="Digite o nome do livro ")
-lbl_idade.grid(row=1, column=0, pady=10, padx=10)
-
-
-Aluno_usuario = tk.Entry(janela, font=("Arial", 12))
-Aluno_usuario.grid(row=0, column=1, pady=10, padx=10)
-biblioteca_usuario = tk.Entry(janela, font=("Arial", 12))
-biblioteca_usuario.grid(row=1, column=1, pady=10, padx=10)
-
-
-btn_mensagem = tk.Button(janela, text="Mensagem", command=janela_bemvindo)
-btn_mensagem.grid(row=2, column=0, pady=10, padx=10)
-
+        messagebox.showwarning("Erro", "Por favor, preencha todos os campos.")     
+label_titulo = tk.Label(janela, text="Título:")
+label_titulo.grid(row=0, column=0, padx=10, pady=5)
+entry_titulo = tk.Entry(janela)
+entry_titulo.grid(row=0, column=1, padx=10, pady=5)
+label_autor = tk.Label(janela, text="Autor:")               
+label_autor.grid(row=1, column=0, padx=10, pady=5)              
+entry_autor = tk.Entry(janela)
+entry_autor.grid(row=1, column=1, padx=10, pady=5)
+btn_cadastrar = tk.Button(janela, text="Cadastrar Livro", command=cadastrar_livro)
+btn_cadastrar.grid(row=2, column=0, columnspan=2, pady=10)
 
 janela.mainloop()
-
