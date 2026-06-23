@@ -38,3 +38,17 @@ btn_mensagem.grid(row=2, column=0, pady=10, padx=10)
 # Rodar interface
 janela.mainloop()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
